@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Travel Taiwan</title>
+		<script src="https://d3js.org/d3.v6.js"></script>
+		<script src="https://unpkg.com/topojson@3"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			h2 {
+				margin: 0;
+				text-align: center;
+			}
+
+			ol,
+			ul {
+				list-style: none;
+			}
+
+			#svg {
+				width: 100%;
+				height: auto;
+				font-size: 24px;
+			}
+
+			#selection {
+				width: 200px;
+				height: 100px;
+			}
+
+			.option {
+				font-size: 16px;
+				border-width: 1px 6px;
+				border-color: #000;
+				border-style: solid;
+				text-align: center;
+				padding: 0.5rem 0;
+				font-weight: 600;
+			}
+
+			.live {
+				background: #ff7e7e;
+			}
+
+			.stay {
+				background: #ffb57e;
+			}
+
+			.travel {
+				background: #ffe57e;
+			}
+
+			.business {
+				background: #a8ffbe;
+			}
+
+			.pass-by {
+				background: #88aeff;
+			}
+
+			.city-name {
+				border-width: 6px 6px 1px 6px;
+				border-color: #000;
+				border-style: solid;
+				font-weight: 600;
+			}
+			.not-yet {
+				background: #ffffff;
+				border-width: 1px 6px 6px 6px;
+				border-color: #000;
+				border-style: solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="svg">
+			<div id="selection">
+				<h2 class="city-name"></h2>
+				<div data-level="5" class="option live">居住</div>
+				<div data-level="4" class="option stay">短居</div>
+				<div data-level="3" class="option travel">遊玩</div>
+				<div data-level="2" class="option business">出差</div>
+				<div data-level="1" class="option pass-by">路過</div>
+				<div data-level="0" class="option not-yet">沒去過</div>
+			</div>
+			<!-- <svg id="tooltip">
+				<text x="50%" y="50%" style="text-anchor: middle; fill: #000">
+					hello
+				</text>
+			</svg> -->
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
