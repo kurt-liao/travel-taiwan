@@ -11,13 +11,14 @@
 			body {
 				margin: 0;
 				padding: 0;
-				height: 100vh;
+				height: 100%;
 				overflow: hidden;
 			}
 
 			h2 {
 				margin: 0;
 				text-align: center;
+				background: #fff;
 			}
 
 			ol,
@@ -25,15 +26,34 @@
 				list-style: none;
 			}
 
-			#svg {
+			a {
+				text-decoration: none;
+				color: #000;
+			}
+
+			#app {
+				position: relative;
 				width: 100%;
-				height: auto;
+				height: 100%;
 				font-size: 24px;
 			}
 
-			#selection {
+			#test {
+				width: 100%;
+				height: auto;
+			}
+
+			#selection,
+			#level-guide {
 				width: 200px;
 				height: 100px;
+				position: absolute;
+			}
+
+			#level-guide {
+				bottom: 0;
+				right: 25%;
+				transform: translate(50px, -300px);
 			}
 
 			.option {
@@ -78,10 +98,38 @@
 				border-color: #000;
 				border-style: solid;
 			}
+
+			#score {
+				position: absolute;
+				bottom: 0;
+				right: 25%;
+				transform: translate(0, -100px);
+			}
+
+			#menu-bar {
+				position: absolute;
+				top: 50%;
+				left: 10%;
+				transform: translateY(-50%);
+			}
+
+			.link {
+				padding: 8px 16px;
+				border: 1px solid #bcbcbc;
+				border-radius: 16px;
+				display: block;
+				transition: all 0.3s ease-in;
+			}
+
+			.link:hover {
+				border: none;
+				box-shadow: 0 0 9px #3e3e3e;
+				transform: scale(1.2);
+			}
 		</style>
 	</head>
 	<body>
-		<div id="svg">
+		<div id="app">
 			<div id="selection">
 				<h2 class="city-name"></h2>
 				<div data-level="5" class="option live">居住</div>
@@ -91,11 +139,22 @@
 				<div data-level="1" class="option pass-by">路過</div>
 				<div data-level="0" class="option not-yet">沒去過</div>
 			</div>
-			<!-- <svg id="tooltip">
-				<text x="50%" y="50%" style="text-anchor: middle; fill: #000">
-					hello
-				</text>
-			</svg> -->
+
+			<div id="score"></div>
+			<div id="level-guide">
+				<div class="option live">居住 5</div>
+				<div class="option stay">短居 4</div>
+				<div class="option travel">遊玩 3</div>
+				<div class="option business">出差 2</div>
+				<div class="option pass-by">路過 1</div>
+				<div class="option not-yet">沒去過 0</div>
+			</div>
+
+			<div id="menu-bar">
+				<a class="link" href="https://github.com/kurt-liao/travel-taiwan"
+					>Github</a
+				>
+			</div>
 		</div>
 		<script src="js/index.js"></script>
 	</body>
