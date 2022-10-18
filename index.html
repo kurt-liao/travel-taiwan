@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Travel Taiwan</title>
+		<script src="https://d3js.org/d3.v6.js"></script>
+		<script src="https://unpkg.com/topojson@3"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			h2 {
+				margin: 0;
+				text-align: center;
+				background: #fff;
+			}
+
+			ol,
+			ul {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+				color: #000;
+			}
+
+			#app {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				font-size: 24px;
+			}
+
+			#test {
+				width: 100%;
+				height: auto;
+			}
+
+			#selection,
+			#level-guide {
+				width: 200px;
+				height: 100px;
+				position: absolute;
+			}
+
+			#level-guide {
+				bottom: 0;
+				right: 25%;
+				transform: translate(50px, -300px);
+			}
+
+			.option {
+				font-size: 16px;
+				border-width: 1px 6px;
+				border-color: #000;
+				border-style: solid;
+				text-align: center;
+				padding: 0.5rem 0;
+				font-weight: 600;
+			}
+
+			.live {
+				background: #ff7e7e;
+			}
+
+			.stay {
+				background: #ffb57e;
+			}
+
+			.travel {
+				background: #ffe57e;
+			}
+
+			.business {
+				background: #a8ffbe;
+			}
+
+			.pass-by {
+				background: #88aeff;
+			}
+
+			.city-name {
+				border-width: 6px 6px 1px 6px;
+				border-color: #000;
+				border-style: solid;
+				font-weight: 600;
+			}
+			.not-yet {
+				background: #ffffff;
+				border-width: 1px 6px 6px 6px;
+				border-color: #000;
+				border-style: solid;
+			}
+
+			#score {
+				position: absolute;
+				bottom: 0;
+				right: 25%;
+				transform: translate(0, -100px);
+			}
+
+			#menu-bar {
+				position: absolute;
+				top: 50%;
+				left: 10%;
+				transform: translateY(-50%);
+			}
+
+			.link {
+				padding: 8px 16px;
+				border: 1px solid #bcbcbc;
+				border-radius: 16px;
+				display: block;
+				transition: all 0.3s ease-in;
+			}
+
+			.link:hover {
+				border: none;
+				box-shadow: 0 0 9px #3e3e3e;
+				transform: scale(1.2);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div id="selection">
+				<h2 class="city-name"></h2>
+				<div data-level="5" class="option live">居住</div>
+				<div data-level="4" class="option stay">短居</div>
+				<div data-level="3" class="option travel">遊玩</div>
+				<div data-level="2" class="option business">出差</div>
+				<div data-level="1" class="option pass-by">路過</div>
+				<div data-level="0" class="option not-yet">沒去過</div>
+			</div>
+
+			<div id="score"></div>
+			<div id="level-guide">
+				<div class="option live">居住 5</div>
+				<div class="option stay">短居 4</div>
+				<div class="option travel">遊玩 3</div>
+				<div class="option business">出差 2</div>
+				<div class="option pass-by">路過 1</div>
+				<div class="option not-yet">沒去過 0</div>
+			</div>
+
+			<div id="menu-bar">
+				<a class="link" href="https://github.com/kurt-liao/travel-taiwan"
+					>Github</a
+				>
+			</div>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
