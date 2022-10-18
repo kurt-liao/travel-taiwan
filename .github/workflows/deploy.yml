@@ -21,6 +21,7 @@ jobs:
           mkdir $PUBLISH_DIR
           cp -r $SOURCE_DIR $PUBLISH_DIR/
           cd $PUBLISH_DIR
+          echo "taiwan.kurtstories.com" > CNAME
           git init
           git config --local user.email $USER_EMAIL
           git config --local user.name $USER_NAME
